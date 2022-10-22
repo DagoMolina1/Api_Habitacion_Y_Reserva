@@ -1,4 +1,5 @@
 import { modeloHabitacion } from "../models/ModeloHabitacion.js";
+
 import { modeloReserva } from "../models/ModeloReserva.js";
 
 //SERVICIOS PARA HABITACIONES
@@ -22,6 +23,10 @@ export class ServicioHabitacion{
     async editarHabitacion(id, datos){
         return await modeloHabitacion.findByIdAndUpdate(id, datos)
     }
+
+    async eliminarHabitacion(id){
+        return await modeloHabitacion.findByIdAndDelete(id)
+    }
 }
 
 //SERVICIOS PARA RESERVAS
@@ -44,5 +49,9 @@ export class ServicioReserva{
 
     async editarReserva(id, datos){
         return await modeloReserva.findByIdAndUpdate(id, datos)
+    }
+
+    async eliminarReserva(id){
+        return await modeloReserva.findByIdAndDelete(id)
     }
 }

@@ -89,4 +89,21 @@ export class ControladorHabitacion{
             })
         }
     }
+
+    async anularHabitacion(req, res){
+        let id = req.params.idHabitacion
+        let objetoServicioHabitacion = new ServicioHabitacion()
+        try {
+            await objetoServicioHabitacion.eliminarHabitacion(id)
+            res.status(200).json({
+                "mensaje":"La habitacion con id " + id + " fue eliminada",
+                "datos":null
+            })
+        } catch (error) {
+            res.status(200).json({
+                "mensaje":"Error, la habitacion no ha sido eliminada " + error,
+                "datos":null
+            })
+        }
+    }
 }

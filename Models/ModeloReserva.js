@@ -28,12 +28,6 @@ const EsquemaDeReserva = new Schema({
         required: true,
         type: Number,
     }
-    //idHabitacion:String
-    //Fecha y hora de entrada:Data
-    //Fecha y hora de salida:Data
-    //Numeros de adultos:Number
-    //Numeros de niños:Number
-    //Costo de la reserva:Number
 });
 
 export const modeloReserva = mongoose.model('reserva', EsquemaDeReserva)
